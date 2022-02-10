@@ -1,10 +1,12 @@
 'use strict';
 
 const pacientes= [
+  
   {id: 1, nome: "Davi", idade: 32},
   {id: 2, nome: "Bruna", idade: 26},
   {id: 3, nome: "Betoven", idade: 7},
   {id: 4, nome: "Theo", idade: 3}
+
 ];
 
 
@@ -21,6 +23,4 @@ module.exports.listarPacientes = async (event) => {
     ),
   };
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
 };

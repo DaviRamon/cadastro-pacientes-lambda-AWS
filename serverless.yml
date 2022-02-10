@@ -23,12 +23,16 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs12.x
-
 # you can overwrite defaults here
- #stage: dev
- #region: sa-east-1
+  stage: prod
+  region: sa-east-1
 
 
 functions:
   listarPacientes:
     handler: handler.listarPacientes
+    events:
+      - http:
+          path: pacientes # identação extra aqui (dois espaços)
+          method: GET    # e aqui também
+    description: "Função de listagem de pacientes"
