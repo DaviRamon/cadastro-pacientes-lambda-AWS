@@ -24,7 +24,7 @@ provider:
   name: aws
   runtime: nodejs12.x
 # you can overwrite defaults here
-  stage: prod
+  stage: dev
   region: sa-east-1
 
 
@@ -36,3 +36,11 @@ functions:
           path: pacientes # identação extra aqui (dois espaços)
           method: GET    # e aqui também
     description: "Função de listagem de pacientes"
+
+  obterPaciente:
+    handler: handler.obterPaciente
+    events:
+      - http:
+          path: pacientes/{pacienteId} # identação extra aqui (dois espaços)
+          method: GET    # e aqui também
+    description: "Função para listar um paciente pelo seu Id"
